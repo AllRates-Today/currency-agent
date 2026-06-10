@@ -10,9 +10,7 @@ It uses the **Agent2Agent (A2A) Python SDK** ([`a2a-sdk`](https://github.com/a2a
 
 ## Overview
 
-```
-A2A Client ──▶ A2A Server (ADK Currency Agent, port 10000) ──▶ MCP Server (port 8080) ──▶ AllRatesToday API
-```
+![Architecture Overview](images/architecture.png)
 
 - **MCP Server** — exposes three tools backed by [allratestoday.com](https://allratestoday.com):
   | Tool | Description |
