@@ -1,0 +1,19 @@
+services:
+  mcp-server:
+    build: ./mcp-server
+    environment:
+      - ALLRATES_API_KEY=${ALLRATES_API_KEY}
+    ports:
+      - "8080:8080"
+
+  agent:
+    build: .
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GOOGLE_GENAI_USE_VERTEXAI=${GOOGLE_GENAI_USE_VERTEXAI:-FALSE}
+      - MODEL=${MODEL:-gemini-2.5-flash}
+      - MCP_SERVER_URL=http://mcp-server:8080/mcp
+    ports:
+      - "10000:10000"
+    depends_on:
+      - mcp-server
