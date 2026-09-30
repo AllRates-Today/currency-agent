@@ -7,7 +7,7 @@ A runnable sample app showing **A2A + Google ADK + MCP** working together: an AI
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Powered by AllRatesToday](https://img.shields.io/badge/Powered%20by-AllRatesToday-orange.svg)](https://allratestoday.com)
 
-It uses the **Agent2Agent (A2A) Python SDK** ([`a2a-sdk`](https://github.com/a2aproject/a2a-python)), Google's **Agent Development Kit** ([`google-adk`](https://github.com/google/adk-python)), and a [FastMCP](https://github.com/jlowin/fastmcp) server that exposes live, historical and reference exchange rate data. Rates come from institutional interbank market data.
+It uses the **Agent2Agent (A2A) Python SDK** ([`a2a-sdk`](https://github.com/a2aproject/a2a-python)), Google's **Agent Development Kit** ([`google-adk`](https://github.com/google/adk-python)), and a [FastMCP](https://github.com/jlowin/fastmcp) server that exposes live, historical and reference exchange rate data. Rates are mid-market, with no retail spread.
 
 ![Architecture Overview](images/architecture.png)
 
