@@ -222,6 +222,8 @@ Based on the [jackwotherspoon/currency-agent](https://github.com/jackwotherspoon
 - **Status:** [allratestoday.com/status](https://allratestoday.com/status)
 - **Support:** [allratestoday.com/contact](https://allratestoday.com/contact)
 - **MCP server:** [AllRates-Today/mcp-server](https://github.com/AllRates-Today/mcp-server) · [@allratestoday/mcp-server](https://www.npmjs.com/package/@allratestoday/mcp-server)
+- **AI agents:** Claude Code plugin `/plugin marketplace add AllRates-Today/claude-code-plugin` · hosted MCP endpoint `https://allratestoday.com/api/mcp` (keyless)
+
 
 ## 📜 License
 
