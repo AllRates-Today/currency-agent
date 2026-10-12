@@ -223,6 +223,7 @@ Based on the [jackwotherspoon/currency-agent](https://github.com/jackwotherspoon
 - **Support:** [allratestoday.com/contact](https://allratestoday.com/contact)
 - **MCP server:** [AllRates-Today/mcp-server](https://github.com/AllRates-Today/mcp-server) · [@allratestoday/mcp-server](https://www.npmjs.com/package/@allratestoday/mcp-server)
 - **AI agents:** Claude Code plugin `/plugin marketplace add AllRates-Today/claude-code-plugin` · hosted MCP endpoint `https://allratestoday.com/api/mcp` (keyless)
+- **New in Oct 2026:** agents can self-issue a trial key — `POST https://allratestoday.com/api/agent/keys` (JSON) → 100 calls / 7 days — and read the keyless [Daily Reference Rate](https://allratestoday.com/reference-rate/) (16:00 London fix) at `https://allratestoday.com/api/open/reference-rate`
 
 
 ## 📜 License
