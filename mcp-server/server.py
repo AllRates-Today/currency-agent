@@ -180,7 +180,7 @@ def get_historical_rates(
         period: The lookback period: "1d", "7d", "30d", or "1y". Defaults to "7d".
 
     Returns:
-        A dictionary with a list of { date, rate } data points, or an error message.
+        A dictionary {source, target, data: [{date, rate, timestamp}, ...]}, or an error message.
     """
     logger.info(
         f"--- 🛠️ Tool: get_historical_rates {currency_from}/{currency_to} over {period} ---"

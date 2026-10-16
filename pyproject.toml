@@ -19,8 +19,8 @@ litellm = ["litellm>=1.70.0"]
 [project.urls]
 Homepage = "https://allratestoday.com"
 Documentation = "https://allratestoday.com/docs"
-Source = "https://github.com/cahthuranag/allratestoday-currency-agent"
-Issues = "https://github.com/cahthuranag/allratestoday-currency-agent/issues"
+Source = "https://github.com/AllRates-Today/currency-agent"
+Issues = "https://github.com/AllRates-Today/currency-agent/issues"
 AllRatesToday = "https://allratestoday.com/developers"
 
 [tool.pytest.ini_options]

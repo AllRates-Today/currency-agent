@@ -104,7 +104,7 @@ All five tools live in `mcp-server/server.py` and are served over the streamable
 |---|---|---|
 | `get_exchange_rate` | `currency_from="USD"`, `currency_to="EUR"`, `amount=None` | `{from, to, rate, source}`, plus `amount` and `converted` (rounded to 4dp) when `amount` is given |
 | `compare_rates` | `currency_from="USD"`, `currency_to_list="EUR,GBP,JPY"` | `{base, rates: {CODE: rate, …}}`, plus `errors` per target that failed. Comma-separated list, capped at **10 targets** |
-| `get_historical_rates` | `currency_from="USD"`, `currency_to="EUR"`, `period="7d"` | The API's historical payload — a list of `{date, rate}` points |
+| `get_historical_rates` | `currency_from="USD"`, `currency_to="EUR"`, `period="7d"` | The API's historical payload — `{source, target, data: [{date, rate, timestamp}, …]}` |
 | `get_rate_change` | `currency_from="USD"`, `currency_to="EUR"`, `period="7d"` | `{from, to, period, start_date, start_rate, end_date, end_rate, change, change_pct, direction}` where `direction` is `up`/`down`/`flat` |
 | `list_currencies` | none | `{currencies: [{code, name, symbol}, …], count}` — 160+ ISO 4217 fiat currencies |
 
@@ -158,7 +158,7 @@ Note that the travel agent reads `MODEL` directly and passes it to ADK — unlik
 Non-Gemini models are routed through [LiteLLM](https://github.com/BerriAI/litellm). This applies to the **currency agent only**:
 
 ```bash
-uv pip install litellm   # or: pip install 'allratestoday-currency-agent[litellm]'
+uv sync --extra litellm   # from the clone (this repo is not published on PyPI); or: uv pip install litellm
 export MODEL=anthropic/claude-sonnet-4-6 ANTHROPIC_API_KEY=sk-ant-...
 # or: export MODEL=openai/gpt-4o OPENAI_API_KEY=sk-...
 ```
