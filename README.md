@@ -104,11 +104,13 @@ All five tools live in `mcp-server/server.py` and are served over the streamable
 |---|---|---|
 | `get_exchange_rate` | `currency_from="USD"`, `currency_to="EUR"`, `amount=None` | `{from, to, rate, source}`, plus `amount` and `converted` (rounded to 4dp) when `amount` is given |
 | `compare_rates` | `currency_from="USD"`, `currency_to_list="EUR,GBP,JPY"` | `{base, rates: {CODE: rate, …}}`, plus `errors` per target that failed. Comma-separated list, capped at **10 targets** |
-| `get_historical_rates` | `currency_from="USD"`, `currency_to="EUR"`, `period="7d"` | The API's historical payload — `{source, target, data: [{date, rate, timestamp}, …]}` |
-| `get_rate_change` | `currency_from="USD"`, `currency_to="EUR"`, `period="7d"` | `{from, to, period, start_date, start_rate, end_date, end_rate, change, change_pct, direction}` where `direction` is `up`/`down`/`flat` |
+| `get_historical_rates` | `currency_from="USD"`, `currency_to="EUR"`, `period="7d"` | **Paid plan.** The API's historical payload — `{source, target, data: [{date, rate, timestamp}, …]}` |
+| `get_rate_change` | `currency_from="USD"`, `currency_to="EUR"`, `period="7d"` | **Paid plan.** `{from, to, period, start_date, start_rate, end_date, end_rate, change, change_pct, direction}` where `direction` is `up`/`down`/`flat` |
 | `list_currencies` | none | `{currencies: [{code, name, symbol}, …], count}` — 160+ ISO 4217 fiat currencies |
 
 **Valid periods:** `1d`, `7d`, `30d`, `1y`. Anything else returns an error without hitting the API.
+
+**History needs a paid plan.** `get_historical_rates` and `get_rate_change` call `/historical-rates`, which is on [paid plans](https://allratestoday.com/pricing) only; on a free or trial key they return `API error: Historical rates require a paid plan…` (HTTP 403, `historical_requires_paid_plan`). The other three tools work on a free key.
 
 **Endpoints used:** `get_exchange_rate` and `compare_rates` call `/rate`; `get_historical_rates` and `get_rate_change` call `/historical-rates`; `list_currencies` calls `/v1/symbols` — all relative to `ALLRATES_BASE_URL`.
 
@@ -177,6 +179,7 @@ The MCP server never throws at the tool boundary — it returns a dict with an `
 | Network / connection failure | Retried, then `API request failed after 3 attempts (…)` |
 | Non-JSON body | `Invalid JSON response from API.` |
 | Invalid `period` | Rejected locally with the list of valid periods |
+| `403` on a history tool | Free or trial key; history needs a paid plan (`API error: Historical rates require a paid plan…`) |
 | Too few history points | `Not enough data points for <PAIR> over <period>.` |
 
 ## 🧪 Development

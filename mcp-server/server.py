@@ -172,7 +172,8 @@ def get_historical_rates(
     currency_to: str = "EUR",
     period: str = "7d",
 ):
-    """Use this to get historical exchange rates over a period.
+    """Use this to get historical exchange rates over a period. Needs a paid
+    AllRatesToday plan; a free or trial key returns a "paid plan" error.
 
     Args:
         currency_from: The currency to convert from (e.g., "USD").
@@ -204,7 +205,8 @@ def get_rate_change(
     period: str = "7d",
 ):
     """Use this to find out how an exchange rate has moved over a period —
-    e.g. to answer "is EUR up or down against USD this week?".
+    e.g. to answer "is EUR up or down against USD this week?". Needs a paid
+    AllRatesToday plan; a free or trial key returns a "paid plan" error.
 
     Args:
         currency_from: The currency to convert from (e.g., "USD").
