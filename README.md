@@ -106,7 +106,7 @@ All five tools live in `mcp-server/server.py` and are served over the streamable
 | `compare_rates` | `currency_from="USD"`, `currency_to_list="EUR,GBP,JPY"` | `{base, rates: {CODE: rate, …}}`, plus `errors` per target that failed. Comma-separated list, capped at **10 targets** |
 | `get_historical_rates` | `currency_from="USD"`, `currency_to="EUR"`, `period="7d"` | The API's historical payload — a list of `{date, rate}` points |
 | `get_rate_change` | `currency_from="USD"`, `currency_to="EUR"`, `period="7d"` | `{from, to, period, start_date, start_rate, end_date, end_rate, change, change_pct, direction}` where `direction` is `up`/`down`/`flat` |
-| `list_currencies` | none | `{currencies: [{code, name, symbol}, …], count}` — 150+ ISO 4217 fiat currencies |
+| `list_currencies` | none | `{currencies: [{code, name, symbol}, …], count}` — 160+ ISO 4217 fiat currencies |
 
 **Valid periods:** `1d`, `7d`, `30d`, `1y`. Anything else returns an error without hitting the API.
 

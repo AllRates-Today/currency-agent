@@ -250,7 +250,7 @@ def get_rate_change(
 
 @mcp.tool()
 def list_currencies():
-    """Use this to list all supported currencies (150+ ISO 4217 fiat currencies).
+    """Use this to list all supported currencies (160+ ISO 4217 fiat currencies).
 
     Call this when you are unsure whether a currency code is supported, or when
     the user asks which currencies are available.
