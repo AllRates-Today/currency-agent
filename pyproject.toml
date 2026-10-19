@@ -28,3 +28,7 @@ testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100
+
+[tool.ruff.lint]
+# Explicit, so CI does not break when a new ruff release widens its default rule set.
+select = ["E", "F", "I"]
