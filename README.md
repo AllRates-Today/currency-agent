@@ -219,6 +219,7 @@ Based on the [jackwotherspoon/currency-agent](https://github.com/jackwotherspoon
 ## 🔗 Links
 
 - **Website:** [allratestoday.com](https://allratestoday.com)
+- [Bank Exchange Rate API](https://allratestoday.com/bank-exchange-rate-api/) — live buy and sell rates from 1,200+ commercial banks in 120+ countries · [npm](https://www.npmjs.com/package/bank-exchange-rates) · [GitHub](https://github.com/AllRates-Today/bank-exchange-rates)
 - **API Docs:** [allratestoday.com/docs](https://allratestoday.com/docs)
 - **Free API key:** [allratestoday.com/register](https://allratestoday.com/register)
 - **Developer Guide:** [allratestoday.com/developers](https://allratestoday.com/developers)
